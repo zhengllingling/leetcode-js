@@ -22,3 +22,5 @@ function insertSort(arr) {
     }
     return arr;
 }
+
+module.exports = insertSort;
