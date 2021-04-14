@@ -60,7 +60,10 @@ function quickSort(arr) {
     if(arr.length < 2) {
         return arr;
     } else {
-      const val = arr[0];
+    //   const val = arr[0];
+      const index = Math.floor(Math.random() * (arr.length-1));
+      const val = arr[index];
+      console.log(val);
       const left = [];
       const right = [];
       arr.forEach(i => {
@@ -71,5 +74,5 @@ function quickSort(arr) {
     }
 }
 
-// let arr = [0, 7, 1, 3, 2, 4, 8, 5, 6];
-// console.log(quickSort(arr));
+let arr1 = [0, 7, 1, 3, 2, 4, 8, 5, 6];
+console.log(quickSort(arr1));
