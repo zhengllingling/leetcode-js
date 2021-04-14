@@ -28,6 +28,9 @@ function max(arr) {
     }
 }
 
+/**
+ * 二分查找算法的分而治之思想的解法
+ */
 function binarySearch(num, target, left, right) {
     let center = null;
     if(right >= left) {
@@ -45,5 +48,28 @@ function binarySearch(num, target, left, right) {
     }
 }
 
-let test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(binarySearch(test, 0, 0, test.length));
+// let test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(binarySearch(test, 0, 0, test.length));
+
+/** 
+ * 快速排序思想：取一个值作为基准值，列表中数据分别与基准值作比较，大于基准值的放一个列表里面，小于基准值的放一边，然后合并这三个列表
+ * 然后分别对小于基准值的和大于基准值的列表进行和上述相同的操作，直到排序结束
+ * 快速排序算法的分而治之思想的解法
+*/
+function quickSort(arr) {
+    if(arr.length < 2) {
+        return arr;
+    } else {
+      const val = arr[0];
+      const left = [];
+      const right = [];
+      arr.forEach(i => {
+          if(i < val) left.push(i);
+          if(i > val) right.push(i);
+      })
+      return quickSort(left).concat([val], quickSort(right))
+    }
+}
+
+// let arr = [0, 7, 1, 3, 2, 4, 8, 5, 6];
+// console.log(quickSort(arr));
