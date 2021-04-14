@@ -1,4 +1,4 @@
-const maxDepth = require('./二叉树的最大深度');
+const maxDepth = require('./二叉树的最大深度-104');
 /** 
  * 一个二叉树左右两个子树的高度差的绝对值补不超过1就是平衡二叉树 
 */
