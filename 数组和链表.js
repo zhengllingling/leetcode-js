@@ -21,9 +21,9 @@ class SingleList {
         return this.size;
     }
 
-    find(item) {
+    find(val,name) {
         let currentNode = this.head;
-        while(currentNode && currentNode.data !== item) {
+        while(currentNode && currentNode.data[name] !== val) {
             currentNode = currentNode.next;
         }
         return currentNode;
@@ -101,3 +101,5 @@ console.log(list.isEmpty())
 console.log(list.show())
 console.log(list.clear())
 console.log(list.length);
+
+module.exports = SingleList;
