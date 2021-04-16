@@ -66,11 +66,11 @@ const data = [
         ]
     }
 ]
-/** 
- * 使用队列实现广度优先搜索算法，算出1-4的最短距离
- * */ 
+// /** 
+//  * 使用队列实现广度优先搜索算法，算出1-4的最短距离
+//  * */ 
 
-function bfs(arr, target) {
-    const queue = new Queue();
+// function bfs(arr, target) {
+//     const queue = new Queue();
     
-}
+// }
