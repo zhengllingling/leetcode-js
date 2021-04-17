@@ -73,3 +73,8 @@ function bfs(root, target) {
 }
 
 console.log(bfs(root, "4"))
+
+
+/** 
+ * 散列表来实现图
+ * */
