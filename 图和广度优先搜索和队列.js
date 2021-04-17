@@ -30,47 +30,46 @@ class Queue {
     }
 }
 
-const data = [
-    {
-        key: '1',
-        value: 1,
-        children: [
-            {
-                key: '3',
-                value: 1
-            },
-            {
-                key: '4',
-                value: 1
-            }
-        ]
-    },
-    {
-        key: '2',
-        value: 1,
-        children: [
-            {
-                key: '3',
-                value: 1
-            },
-            {
-                key: '5',
-                value: 1,
-                children: [
-                    {
-                        key: '4',
-                        value: 1
-                    }
-                ]
-            }
-        ]
-    }
-]
-// /** 
-//  * 使用队列实现广度优先搜索算法，算出1-4的最短距离
-//  * */ 
+const root = {
+    key: '1',
+    value: 1,
+    children: [
+        {
+            key: '3',
+            value: 1
+        },
+        {
+            key: '5',
+            value: 1,
+            children: [
+                {
+                    key: '4',
+                    value: 1
+                }
+            ]
+        }
+    ]
+}
 
-// function bfs(arr, target) {
-//     const queue = new Queue();
-    
-// }
+/** 
+ * 使用队列实现广度优先搜索算法，算出到达目标节点最短距离需要几步
+ * */ 
+function bfs(root, target) {
+    const queue = new Queue();
+    let step = 0
+    queue.addqueue(root);
+    while(!queue.isEmpty()) {
+        step++;
+        const len = queue.size();
+        for(let i = 0; i < len; i++) {
+            const cur = queue.head();
+            if(cur.key === target) return step;
+            if(cur.children && cur.children.length) {
+                cur.children.map(res => queue.addqueue(res))
+            }
+            queue.delqueue();
+        }
+    }
+}
+
+console.log(bfs(root, "4"))
